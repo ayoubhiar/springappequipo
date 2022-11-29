@@ -35,7 +35,7 @@ public class MedicoController {
 		return ResponseEntity.ok().body( medicoRepository.findAll());
 	}
 	@GetMapping("/findMedicoByName")
-	public ResponseEntity<Object> findMedicoByName(String nombre) {
+	public ResponseEntity<Object> findMedicoByName(@RequestParam("nombre")String nombre) {
 		return ResponseEntity.ok().body( medicoRepository.findByName(nombre));
 	}
 
