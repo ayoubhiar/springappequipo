@@ -22,4 +22,9 @@ public class PacienteController {
     public ResponseEntity<Object> findAll() {
         return ResponseEntity.ok().body(pacienteService.findAll());
     }
+
+    @GetMapping("findPaciente")
+    public ResponseEntity<Object> findPaciente(@RequestParam Integer id) {
+        return ResponseEntity.ok().body(pacienteService.findPaciente(id));
+    }
 }

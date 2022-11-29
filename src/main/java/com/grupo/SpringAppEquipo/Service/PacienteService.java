@@ -3,6 +3,7 @@ package com.grupo.SpringAppEquipo.Service;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,5 +36,14 @@ public class PacienteService {
             response.put("error", e.getMessage());
         }
         return response;
+    }
+
+    public Paciente findPaciente(Integer id) {
+        Optional<Paciente> p = pacienteRepository.findById(id);
+        Paciente paciente = new Paciente();
+        if(p.isPresent()){
+            paciente = p.orElseGet(() -> new Paciente());
+        }
+        return paciente;
     }
 }
