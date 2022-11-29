@@ -19,16 +19,4 @@ public class Paciente {
 	public Paciente() {
 		super();
 	}
-	public Paciente(Integer idPaciente, String nombreCompleto, String enfermedad, Integer edad) {
-		super();
-		this.idPaciente = idPaciente;
-		this.nombreCompleto = nombreCompleto;
-		this.enfermedad = enfermedad;
-		this.edad = edad;
-	}
-	@Override
-	public String toString() {
-		return "Paciente [idPaciente=" + idPaciente + ", nombreCompleto=" + nombreCompleto + ", enfermedad=" + enfermedad
-				+ ", edad=" + edad + "]";
-	}
 }
