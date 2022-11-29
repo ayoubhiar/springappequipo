@@ -13,8 +13,8 @@ public class Consulta {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private Paciente paciente;
-	private Medico medico;
+	private Integer idPaciente;
+	private Integer idMedico;
 	private String observaciones;
 	private String fecha;
 	public Consulta() {

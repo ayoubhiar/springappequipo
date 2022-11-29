@@ -1,6 +1,6 @@
 package com.grupo.SpringAppEquipo.entity;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +15,7 @@ public class Medico {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nombreCompleto;
-	private List<Paciente>pacientes;
+	private ArrayList<Integer>idPacientes;
 	
 	public Medico() {
 		super();
