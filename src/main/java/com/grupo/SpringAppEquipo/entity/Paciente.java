@@ -12,7 +12,7 @@ import lombok.Data;
 public class Paciente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idPaciente;
+	private Integer id;
 	private String nombreCompleto;
 	private String enfermedad;
 	private Integer edad;
