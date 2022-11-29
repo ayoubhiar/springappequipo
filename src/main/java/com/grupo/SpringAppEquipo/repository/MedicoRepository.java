@@ -9,6 +9,6 @@ import com.grupo.SpringAppEquipo.entity.Medico;
 
 @Repository
 public interface MedicoRepository extends JpaRepository<Medico, Integer> {
-	@Query("Select m from Medico m where nombre=:nombre")
+	@Query("Select m from Medico m where nombreCompleto=:nombre")
 	Medico findByName(@Param("nombre") String nombre);
 }
