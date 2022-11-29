@@ -1,10 +1,12 @@
 package com.grupo.SpringAppEquipo.Controller;
 
-import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,6 +39,10 @@ public class MedicoController {
 	@GetMapping("/findMedicoByName")
 	public ResponseEntity<Object> findMedicoByName(@RequestParam("nombre")String nombre) {
 		return ResponseEntity.ok().body( medicoRepository.findByName(nombre));
+	}
+	@PostMapping("/saveMedico")
+	public ResponseEntity<Object> findMedicoByName(@RequestBody Map<String, Object> medico) {
+		return ResponseEntity.ok().body( medicoService.save(medico));
 	}
 
 }

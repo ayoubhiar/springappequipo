@@ -1,5 +1,9 @@
 package com.grupo.SpringAppEquipo.Service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +21,21 @@ public class MedicoService {
 		super();
 		System.out.println("Creando una instancia de "+this.getClass().getSimpleName());
 	}
-	@Transactional
-	public void insertar(Medico medico) {
-		medicoRepository.save(medico);
-	}
+	   public Map<String, String> save(Map<String, Object> medico) {
+	        Medico m = new Medico();
+	        Map<String, String> response = new HashMap<>();
+
+	        try {
+	            m.setIdPacientes((ArrayList<Integer>)medico.get("idPacientes"));
+	            m.setNombreCompleto((String) medico.get("nombreCompleto"));
+	            medicoRepository.save(m);
+
+	            response.put("status", "usuario guardado con éxito");
+	        } catch (Exception e) {
+	            response.put("error", e.getMessage());
+	        }
+	        return response;
+	    }
 	@Transactional
 	public void modificar(Medico medico) {
 		medicoRepository.save(medico);
